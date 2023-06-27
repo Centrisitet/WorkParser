@@ -24,9 +24,9 @@ def main():
             saver.save_vacancies([vac_sj])
         print(saver.load_vacancies())
     except KeyError:
-        print('Hui ')
+        print('KeyError ')
     except TypeError:
-        print('zalupa ')
+        print('TypeError ')
 
 
 if __name__ == "__main__":
