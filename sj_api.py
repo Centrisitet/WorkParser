@@ -18,7 +18,3 @@ class SuperJobApi(API):
         """Метод для получения вакансий """
         req = rq.get(self.api_url+params, headers=self.headers)
         return req.json()['objects']
-
-
-s = SuperJobApi()
-pprint(s.get_api('Python'))

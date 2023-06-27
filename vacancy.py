@@ -1,4 +1,5 @@
 class Vacancy:
+    vacs = []
 
     def __init__(self, title, url, salary_min, salary_max, requirement):
         self.title = title
@@ -6,6 +7,7 @@ class Vacancy:
         self.salary_min = salary_min
         self.salary_max = salary_max
         self.requirement = requirement
+        self.vacs.append(self)
 
     def __str__(self):
         return f"{self.title}, {self.url}, {self.salary_min}, {self.salary_max}, {self.requirement}"

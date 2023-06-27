@@ -20,6 +20,6 @@ class HH_API(API):
 
 hh = HH_API()
 
-hh.get_api('Python Junior')
+#pprint(hh.get_api('Python Junior'))
 
 
