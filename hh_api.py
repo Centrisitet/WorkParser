@@ -1,12 +1,13 @@
-import json
 from api import API
 import requests as rq
-from pprint import pprint
 
 
 class HH_API(API):
     hh_api = 'https://api.hh.ru/vacancies'
 
+    '''
+    Метод для получения вакансий с хх, по городу СПБ, фильтр по названию вводит юзер
+    '''
     def get_api(self, filter: str, quant = 100, page=0):
         params = {
             'text': f'NAME:{filter}',  # Текст фильтра.
@@ -16,10 +17,3 @@ class HH_API(API):
         }
         req = rq.get(self.hh_api, params)  # Посылаем запрос к API
         return req.json()['items']
-
-
-hh = HH_API()
-
-#pprint(hh.get_api('Python Junior'))
-
-

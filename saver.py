@@ -17,16 +17,23 @@ class Saver:
             data = json.load(f)
             return data
 
+    '''
+    Метод для сохранения вакансий в json файл
+    '''
     def save_vacancies(self, vacancies):
         vacancies_data = []
         for el in vacancies:
             vacancies_data.append(el.as_dict())
         self.__save_data(vacancies_data)
 
+    '''
+    Метод для загрузки вакансий
+    '''
     def load_vacancies(self):
         dict_vacancies = self.__load_data()
         vacancies = []
         for el in dict_vacancies:
-            new_vac = Vacancy(el['title'], el['url'], el['salary_min'], el['salary_max'], el['requirement'])
+            salary = {'from': el['salary_min'], 'to': el['salary_max']}
+            new_vac = Vacancy(el['title'], el['url'], salary, el['requirement'])
             vacancies.append(new_vac)
         return vacancies
