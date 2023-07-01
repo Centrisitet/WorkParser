@@ -12,13 +12,11 @@ class SuperJobApi(API):
                         "Authorization": "Bearer r.000000010000001.example.access_token",
                         "Content-Type": "application/x-www-form-urlencoded"
                         }
-
+    '''
+    Метод для получения вакансий с СЖ с фильтром по названию. Фильтр вводит юзер
+    '''
     def get_api(self, filter: str):
         params = f'?keyword={filter}&period=3'
         """Метод для получения вакансий """
         req = rq.get(self.api_url+params, headers=self.headers)
         return req.json()['objects']
-
-
-s = SuperJobApi()
-pprint(s.get_api('Python'))
