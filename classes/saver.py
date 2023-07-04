@@ -1,5 +1,5 @@
 import json
-from vacancy import Vacancy
+from classes.vacancy import Vacancy
 
 
 class Saver:

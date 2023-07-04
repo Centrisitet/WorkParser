@@ -1,5 +1,5 @@
 import requests as rq
-from api import API
+from classes.api import API
 from pprint import pprint
 
 

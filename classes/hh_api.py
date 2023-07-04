@@ -1,4 +1,4 @@
-from api import API
+from classes.api import API
 import requests as rq
 
 
