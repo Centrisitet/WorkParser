@@ -1,14 +1,13 @@
-from api import API
+from classes.api import API
 import requests as rq
 
 
 class HH_API(API):
+    """Класс для работы с апи ХХ"""
     hh_api = 'https://api.hh.ru/vacancies'
 
-    '''
-    Метод для получения вакансий с хх, по городу СПБ, фильтр по названию вводит юзер
-    '''
     def get_api(self, filter: str, quant = 100, page=0):
+        """Метод для получения вакансий с хх, по городу СПБ, фильтр по названию вводит юзер"""
         params = {
             'text': f'NAME:{filter}',  # Текст фильтра.
             'area': 2,  # Поиск осуществляется по вакансиям города Санкт-петербург

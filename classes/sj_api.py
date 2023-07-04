@@ -1,10 +1,10 @@
 import requests as rq
-from api import API
+from classes.api import API
 from pprint import pprint
 
 
 class SuperJobApi(API):
-    """ Класс для подключения к API superjob.ru"""
+    """Класс для подключения к API superjob.ru"""
     def __init__(self):
         self.api_url = "https://api.superjob.ru/2.0/vacancies/"
         self.headers = {"Host": "api.superjob.ru",
@@ -12,10 +12,9 @@ class SuperJobApi(API):
                         "Authorization": "Bearer r.000000010000001.example.access_token",
                         "Content-Type": "application/x-www-form-urlencoded"
                         }
-    '''
-    Метод для получения вакансий с СЖ с фильтром по названию. Фильтр вводит юзер
-    '''
+
     def get_api(self, filter: str):
+        """Метод для получения вакансий с СЖ с фильтром по названию. Фильтр вводит юзер"""
         params = f'?keyword={filter}&period=3'
         """Метод для получения вакансий """
         req = rq.get(self.api_url+params, headers=self.headers)
