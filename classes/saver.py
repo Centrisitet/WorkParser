@@ -17,19 +17,15 @@ class Saver:
             data = json.load(f)
             return data
 
-    '''
-    Метод для сохранения вакансий в json файл
-    '''
     def save_vacancies(self, vacancies):
+        """Метод для сохранения вакансий в json файл"""
         vacancies_data = []
         for el in vacancies:
             vacancies_data.append(el.as_dict())
         self.__save_data(vacancies_data)
 
-    '''
-    Метод для загрузки вакансий
-    '''
     def load_vacancies(self):
+        """Метод для загрузки вакансий"""
         dict_vacancies = self.__load_data()
         vacancies = []
         for el in dict_vacancies:

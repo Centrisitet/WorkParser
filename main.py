@@ -1,4 +1,4 @@
-from src import get_vacancies
+from funcs.src import get_vacancies
 
 
 print(get_vacancies())

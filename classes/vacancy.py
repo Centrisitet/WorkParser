@@ -1,4 +1,5 @@
 class Vacancy:
+    """Класс для работы с вакансиями"""
     vacs = []
 
     def __init__(self, title, url, salary, requirement):
@@ -18,10 +19,8 @@ class Vacancy:
     def __repr__(self):
         return f'Название: {self.title}, URL: {self.url}, Зарплата от {self.salary_min} до {self.salary_max}, Требования: {self.requirement}'
 
-    '''
-    Метод для перевода экземпляра вакансии в вид словаря
-    '''
     def as_dict(self):
+        """ Метод для перевода экземпляра вакансии в вид словаря"""
         vacancy = {"title": self.title,
                    "url": self.url,
                    "salary_min": self.salary_min,
